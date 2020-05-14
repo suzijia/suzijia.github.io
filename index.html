@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="en">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -80,11 +80,10 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="苏子佳的个人博客">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="og:site_name" content="苏子佳的个人博客">
+<meta property="article:author" content="苏子佳">
 <meta name="twitter:card" content="summary">
 
 
@@ -101,7 +100,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -121,7 +120,7 @@
 
 
 
-  <title>Hexo</title>
+  <title>苏子佳的个人博客</title>
   
 
 
@@ -133,7 +132,7 @@
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -152,7 +151,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">苏子佳的个人博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -182,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            首页
           </a>
         </li>
       
@@ -192,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -202,7 +201,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            分类
           </a>
         </li>
       
@@ -212,7 +211,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            归档
           </a>
         </li>
       
@@ -252,13 +251,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/13/form%E8%A1%A8%E5%8D%95%E6%8F%90%E4%BA%A4%E8%87%AA%E5%8A%A8%E6%8F%90%E4%BA%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="苏子佳">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="苏子佳的个人博客">
     </span>
 
     
@@ -278,9 +277,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-13T18:24:01+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-13T18:37:47+08:00">
                 2020-05-13
               </time>
             
@@ -319,150 +318,14 @@
 
       
         
-          
-            <p>先说一下作者遇到的问题，本地开发测试都可以完美运行，一到线上就开始ajax请求浏览器给cancel，虽然这个请求cancel了，但是controller里的代码执行了</p>
-<p>控制器代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public function edit_index_article()&#123;</span><br><span class="line">        $old_id &#x3D; $_POST[&#39;old_id&#39;];</span><br><span class="line">        &#x2F;&#x2F;加上新的</span><br><span class="line">        $id &#x3D; intval($_POST[&#39;new_id&#39;]);</span><br><span class="line">        $sort &#x3D; intval($_POST[&#39;sort&#39;]);</span><br><span class="line">        &#x2F;&#x2F;验证问题ID</span><br><span class="line">        $q &#x3D; DB::table(&#39;article&#39;)</span><br><span class="line">            -&gt;select(&#39;id&#39;)</span><br><span class="line">            -&gt;where([&#39;id&#39;&#x3D;&gt;$id])</span><br><span class="line">            -&gt;first();</span><br><span class="line">        if(!$q)&#123;</span><br><span class="line">            die(json_encode([&#39;code&#39;&#x3D;&gt;400,&#39;msg&#39;&#x3D;&gt;&#39;&#39;]));</span><br><span class="line">        &#125;</span><br><span class="line">            $this-&gt;redis-&gt;zRem($this-&gt;home_community_key,$old_id);</span><br><span class="line">        &#x2F;&#x2F;添加问题</span><br><span class="line">        $a &#x3D; $this-&gt;redis-&gt;zAdd($this-&gt;home_community_key,$sort,$id.&#39;-a&#39;);</span><br><span class="line">        die(json_encode([&#39;code&#39;&#x3D;&gt;200,&#39;msg&#39;&#x3D;&gt;&#39;&#39;]));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>表单代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">&lt;form class&#x3D;&quot;layui-form&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;layui-form-item&quot;&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;layui-input-block&quot;&gt;</span><br><span class="line">            &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;status&quot; value&#x3D;&quot;2&quot; title&#x3D;&quot;问题&quot; lay-filter&#x3D;&quot;count-type&quot; &lt;?php if($status &#x3D;&#x3D; 2)&#123; ?&gt;     checked&#x3D;&quot;checked&quot;  &lt;?php  &#125; ?&gt; &gt;</span><br><span class="line">            &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;status&quot; value&#x3D;&quot;1&quot; title&#x3D;&quot;文章&quot; lay-filter&#x3D;&quot;count-type&quot;&lt;?php if($status &#x3D;&#x3D; 1)&#123; ?&gt;     checked&#x3D;&quot;checked&quot;  &lt;?php  &#125; ?&gt; &gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;layui-inline&quot;&gt;</span><br><span class="line">        &lt;label class&#x3D;&quot;layui-form-label&quot;&gt;ID&lt;&#x2F;label&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;layui-input-inline&quot;&gt;</span><br><span class="line">            &lt;input type&#x3D;&quot;&quot; name&#x3D;&quot;add_article_id&quot; value&#x3D;&quot;&#123;&#123;intval($id)&#125;&#125;&quot; id&#x3D;&quot;add_article_id&quot; lay-verify&#x3D;&quot;&quot; autocomplete&#x3D;&quot;off&quot; class&#x3D;&quot;layui-input&quot;&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;layui-inline&quot;&gt;</span><br><span class="line">        &lt;label class&#x3D;&quot;layui-form-label&quot;&gt;排序&lt;&#x2F;label&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;layui-input-inline&quot;&gt;</span><br><span class="line">            &lt;input type&#x3D;&quot;&quot; name&#x3D;&quot;sort&quot; id&#x3D;&quot;sort&quot; lay-verify&#x3D;&quot;&quot; autocomplete&#x3D;&quot;off&quot; class&#x3D;&quot;layui-input&quot;&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;center&gt; &lt;button class&#x3D;&quot;layui-btn layui-btn-primary&quot; onclick&#x3D;&quot;add_comm(&#39;&#123;&#123;$id&#125;&#125;&#39;)&quot; &gt;确定&lt;&#x2F;button&gt;&lt;&#x2F;center&gt;</span><br><span class="line">&lt;&#x2F;form&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    layui.use([&#39;form&#39;], function()&#123;</span><br><span class="line">        var $ &#x3D; layui.jquery</span><br><span class="line">        var form &#x3D; layui.form;</span><br><span class="line">        $.ajaxSetup(&#123;</span><br><span class="line">            headers: &#123;</span><br><span class="line">                &#39;X-CSRF-TOKEN&#39;: $(&#39;meta[name&#x3D;&quot;csrf-token&quot;]&#39;).attr(&#39;content&#39;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    function add_comm(id) &#123;</span><br><span class="line">        var status &#x3D;  $(&quot;input[name&#x3D;&#39;status&#39;]:checked&quot;).val()</span><br><span class="line">        var add_article_id &#x3D; $(&#39;#add_article_id&#39;).val();</span><br><span class="line">        var sort &#x3D; $(&#39;#sort&#39;).val();</span><br><span class="line">        var reg&#x3D;&#x2F;^[1-9]\d*$&#x2F;;</span><br><span class="line">        if(reg.test(sort)!&#x3D;&#x3D;true)&#123;</span><br><span class="line">            alert(&quot;请输入非零的正整数&quot;);</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">        if(status &#x3D;&#x3D;1)&#123;</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                    type: &quot;post&quot;,</span><br><span class="line">                    url: &quot;&#x2F;Course&#x2F;edit_index_article&quot;,</span><br><span class="line">                    data: &#123;</span><br><span class="line">                        &#39;old_id&#39;:id,</span><br><span class="line">                        &#39;new_id&#39;:add_article_id,</span><br><span class="line">                        &#39;sort&#39;:sort</span><br><span class="line">                    &#125;,</span><br><span class="line">                dataType: &#39;json&#39;,</span><br><span class="line">                    success: function (result) &#123;</span><br><span class="line">                        if(result[&#39;code&#39;] &#x3D;&#x3D; 400)&#123;</span><br><span class="line">                            alert(&#39;没有该帖子&#39;);</span><br><span class="line">                            return false;</span><br><span class="line">                        &#125;</span><br><span class="line">                        if(result[&#39;code&#39;] &#x3D;&#x3D; 200)&#123;</span><br><span class="line">                            layer.msg(&#39;添加成功,马上刷新页面&#39;);</span><br><span class="line"></span><br><span class="line">                            parent.layer.closeAll()</span><br><span class="line">                            window.parent.location.href &#x3D; &#39;&#x2F;community&#x2F;index?page_type&#x3D;5&#39;;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            );</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">        if(status &#x3D;&#x3D; 2)&#123;</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                    type: &quot;post&quot;,</span><br><span class="line">                    url: &quot;&#x2F;Course&#x2F;edit_index_question&quot;,</span><br><span class="line">                    async: false,</span><br><span class="line">                    data: &#123;</span><br><span class="line">                        &#39;old_question_id&#39;:id,</span><br><span class="line">                        &#39;new_question_id&#39;:add_article_id,</span><br><span class="line">                        &#39;sort&#39;:sort</span><br><span class="line">                    &#125;,</span><br><span class="line">                dataType: &#39;json&#39;,</span><br><span class="line">                    success: function (result) &#123;</span><br><span class="line">                        if(result[&#39;code&#39;] &#x3D;&#x3D; 400)&#123;</span><br><span class="line">                            alert(&#39;没有该帖子&#39;);</span><br><span class="line">                            return false;</span><br><span class="line">                        &#125;</span><br><span class="line">                        if(result[&#39;code&#39;] &#x3D;&#x3D; 200)&#123;</span><br><span class="line">                            layer.msg(&#39;修改成功,马上刷新页面&#39;);</span><br><span class="line">                            parent.layer.closeAll()</span><br><span class="line">                            window.parent.location.href &#x3D; &#39;&#x2F;community&#x2F;index?page_type&#x3D;5&#39;;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            );</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-<p>开始debug，由于数据更新成功，怀疑代码执行到ajaxreturn返回状态码挂了，修改返回格式，失败。然后怀疑是浏览器插件自动取消请求，缓存问题，都不是。<br>产生问题的原因：<br>在本地运行上边的代码的时候，控制台会有报错，并且会有两个请求如下图：<br><img src="https://img-blog.csdnimg.cn/20200513182334837.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzI4OTMw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这里有两个请求一个成功了，一个取消了，并且是我们需要的那个请求成功了，经过排查，<del><strong>第二个请求是layui框架使用form表单后，框架本身会自动给提交表单的数据。</strong></del>我们并不需要这个请求，一到线上，这个请求失败导致ajax的请求也失败。<br>经过大佬的指定，最后确定了原因是因为 <strong>form表单里边如果包含button按钮的话，并且按钮没有指定type的时候，会默认submit，提交form表单！！！！</strong><br>解决办法：<br>给button按钮添加type=”button”</p>
-<form class="layui-form" onsubmit="return false">
-给form表单添加阻止表单提交的属性。
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/13/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/13/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-13T14:41:08+08:00">
-                2020-05-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          <p>先说一下作者遇到的问题，本地开发测试都可以完美运行，一到线上就开始ajax请求浏览器给cancel，虽然这个请求cancel了，但是controller里的代码执行了</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/13/form%E8%A1%A8%E5%8D%95%E6%8F%90%E4%BA%A4%E8%87%AA%E5%8A%A8%E6%8F%90%E4%BA%A4/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -531,7 +394,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-author-name" itemprop="name">苏子佳</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -542,8 +405,8 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -587,21 +450,17 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">苏子佳</span>
 
   
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
-  <span class="post-meta-divider">|</span>
 
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
