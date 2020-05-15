@@ -81,12 +81,12 @@
 
 <meta name="description" content="缓存穿透缓存穿透是指，请求获取的数据源不存在，Redis没有则会去请求数据库，数据库也没有，这时候大量请求可能会压垮数据库。 缓存击穿缓存击穿是指，请求获取的某个redis key刚好过期，数据库中有数据，这时候大量的请求就落到的数据库上，造成数据库挂掉。 缓存雪崩缓存雪崩是指，有大量的redis key过期，这时候大量请求落到数据库，造成数据库压力很大。 缓存穿透的解决方案针对缓存穿透，可以直">
 <meta property="og:type" content="article">
-<meta property="og:title" content="form表单提交">
+<meta property="og:title" content="缓存穿透、缓存雪崩、缓存击穿及解决方案">
 <meta property="og:url" content="http://yoursite.com/2018/08/15/%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%EF%BC%8C%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%EF%BC%8C%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html">
 <meta property="og:site_name" content="苏子佳">
 <meta property="og:description" content="缓存穿透缓存穿透是指，请求获取的数据源不存在，Redis没有则会去请求数据库，数据库也没有，这时候大量请求可能会压垮数据库。 缓存击穿缓存击穿是指，请求获取的某个redis key刚好过期，数据库中有数据，这时候大量的请求就落到的数据库上，造成数据库挂掉。 缓存雪崩缓存雪崩是指，有大量的redis key过期，这时候大量请求落到数据库，造成数据库压力很大。 缓存穿透的解决方案针对缓存穿透，可以直">
 <meta property="article:published_time" content="2018-08-15T09:36:37.000Z">
-<meta property="article:modified_time" content="2020-05-15T02:23:48.529Z">
+<meta property="article:modified_time" content="2020-05-15T03:15:50.767Z">
 <meta property="article:author" content="苏子佳">
 <meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary">
@@ -125,7 +125,7 @@
 
 
 
-  <title>form表单提交 | 苏子佳</title>
+  <title>缓存穿透、缓存雪崩、缓存击穿及解决方案 | 苏子佳</title>
   
 
 
@@ -269,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">form表单提交</h1>
+          <h1 class="post-title" itemprop="name headline">缓存穿透、缓存雪崩、缓存击穿及解决方案</h1>
         
 
         <div class="post-meta">
