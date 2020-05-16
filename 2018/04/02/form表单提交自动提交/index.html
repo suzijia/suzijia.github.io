@@ -87,7 +87,7 @@
 <meta property="og:description" content="☺">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200513182334837.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzI4OTMw,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2018-04-02T01:36:14.000Z">
-<meta property="article:modified_time" content="2020-05-16T03:23:22.300Z">
+<meta property="article:modified_time" content="2020-05-16T03:26:52.597Z">
 <meta property="article:author" content="苏子佳">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
@@ -348,8 +348,7 @@
       
 
       
-        <p>☺</p>
-<a id="more"></a>
+        <pre><code>☺</code></pre><a id="more"></a>
 <p>先说一下作者遇到的问题，本地开发测试都可以完美运行，一到线上就开始ajax请求浏览器给cancel，虽然这个请求cancel了，但是controller里的代码执行了<br>控制器代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public function edit_index_article()&#123;</span><br><span class="line">        $old_id &#x3D; $_POST[&#39;old_id&#39;];</span><br><span class="line">        &#x2F;&#x2F;加上新的</span><br><span class="line">        $id &#x3D; intval($_POST[&#39;new_id&#39;]);</span><br><span class="line">        $sort &#x3D; intval($_POST[&#39;sort&#39;]);</span><br><span class="line">        &#x2F;&#x2F;验证问题ID</span><br><span class="line">        $q &#x3D; DB::table(&#39;article&#39;)</span><br><span class="line">            -&gt;select(&#39;id&#39;)</span><br><span class="line">            -&gt;where([&#39;id&#39;&#x3D;&gt;$id])</span><br><span class="line">            -&gt;first();</span><br><span class="line">        if(!$q)&#123;</span><br><span class="line">            die(json_encode([&#39;code&#39;&#x3D;&gt;400,&#39;msg&#39;&#x3D;&gt;&#39;&#39;]));</span><br><span class="line">        &#125;</span><br><span class="line">            $this-&gt;redis-&gt;zRem($this-&gt;home_community_key,$old_id);</span><br><span class="line">        &#x2F;&#x2F;添加问题</span><br><span class="line">        $a &#x3D; $this-&gt;redis-&gt;zAdd($this-&gt;home_community_key,$sort,$id.&#39;-a&#39;);</span><br><span class="line">        die(json_encode([&#39;code&#39;&#x3D;&gt;200,&#39;msg&#39;&#x3D;&gt;&#39;&#39;]));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>表单代码：</p>
