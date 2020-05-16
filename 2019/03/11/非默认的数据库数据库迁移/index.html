@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="psr," />
+  <meta name="keywords" content="数据迁移,laravel," />
 
 
 
@@ -81,14 +81,15 @@
 
 <meta name="description" content="☺">
 <meta property="og:type" content="article">
-<meta property="og:title" content="psr基础编码规范">
-<meta property="og:url" content="http://yoursite.com/2018/11/15/psr%E5%9F%BA%E7%A1%80%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/index.html">
+<meta property="og:title" content="非默认的数据库数据库迁移">
+<meta property="og:url" content="http://yoursite.com/2019/03/11/%E9%9D%9E%E9%BB%98%E8%AE%A4%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/index.html">
 <meta property="og:site_name" content="苏子佳">
 <meta property="og:description" content="☺">
-<meta property="article:published_time" content="2018-11-15T13:33:23.000Z">
-<meta property="article:modified_time" content="2020-05-16T03:26:52.594Z">
+<meta property="article:published_time" content="2019-03-11T01:10:22.000Z">
+<meta property="article:modified_time" content="2020-05-16T07:19:35.638Z">
 <meta property="article:author" content="苏子佳">
-<meta property="article:tag" content="psr">
+<meta property="article:tag" content="数据迁移">
+<meta property="article:tag" content="laravel">
 <meta name="twitter:card" content="summary">
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/15/psr基础编码规范/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/03/11/非默认的数据库数据库迁移/"/>
 
 
 
 
 
-  <title>psr基础编码规范 | 苏子佳</title>
+  <title>非默认的数据库数据库迁移 | 苏子佳</title>
   
 
 
@@ -252,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/psr%E5%9F%BA%E7%A1%80%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/11/%E9%9D%9E%E9%BB%98%E8%AE%A4%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="苏子佳">
@@ -269,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">psr基础编码规范</h1>
+          <h1 class="post-title" itemprop="name headline">非默认的数据库数据库迁移</h1>
         
 
         <div class="post-meta">
@@ -281,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-15T21:33:23+08:00">
-                2018-11-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-11T09:10:22+08:00">
+                2019-03-11
               </time>
             
 
@@ -304,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%A7%84%E8%8C%83/" itemprop="url" rel="index">
-                    <span itemprop="name">规范</span>
+                  <a href="/categories/laravel/" itemprop="url" rel="index">
+                    <span itemprop="name">laravel</span>
                   </a>
                 </span>
 
@@ -347,22 +348,22 @@
 
       
         <pre><code>☺</code></pre><a id="more"></a>
-<p>PHP 代码文件 必须 以 &lt;?php 或 &lt;?= 标签开始；</p>
-<p>PHP 代码文件 必须 以 不带 BOM 的 UTF-8 编码；</p>
-<p>PHP 代码中 应该 只定义类、函数、常量等声明，或其他会产生 副作用 的操作（如：生成文件输出以及修改 .ini 配置文件等），二者只能选其一；</p>
-<p>命名空间以及类 必须 符合 PSR 的自动加载规范： [PSR-0（已废弃）或 PSR-4] 中的一个。</p>
-<p>类的命名 必须 遵循 StudlyCaps 大写开头的驼峰命名规范；</p>
-<p>类中的常量所有字母都 必须 大写，单词间用下划线分隔；</p>
-<p>方法名称 必须 符合 camelCase 式的小写开头驼峰命名规范。<br>代码 必须 使用 4 个空格符而不是「Tab 键」进行缩进。</p>
-<p>每行的字符数 应该 软性保持在 80 个之内，理论上 一定不可 多于 120 个，但 一定不可 有硬性限制。</p>
-<p>每个 namespace 命名空间声明语句和 use 声明语句块后面，必须 插入一个空白行。</p>
-<p>类的开始花括号（{） 必须 写在类声明后自成一行，结束花括号（}）也 必须 写在类主体后自成一行。</p>
-<p>方法的开始花括号（{） 必须 写在函数声明后自成一行，结束花括号（}）也 必须 写在函数主体后自成一行。</p>
-<p>类的属性和方法 必须 添加访问修饰符（private、protected 以及 public），abstract 以及 final 必须 声明在访问修饰符之前，而 static 必须 声明在访问修饰符之后。</p>
-<p>控制结构的关键字后 必须 要有一个空格符，而调用方法或函数时则 一定不可 有。</p>
-<p>控制结构的开始花括号（{） 必须 写在声明的同一行，而结束花括号（}） 必须 写在主体后自成一行。</p>
-<p>控制结构的开始左括号后和结束右括号前，都 一定不可 有空格符。</p>
-<p>控制结构比如有：if、else if、switch、try catch、do、for、foreach等</p>
+<h2 id="生成迁移"><a href="#生成迁移" class="headerlink" title="生成迁移"></a>生成迁移</h2><p>php  Artisan 命令 来创建迁移：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan make:migration create_users_table</span><br></pre></td></tr></table></figure>
+<p>生成的迁移文件将会被放置在 database/migrations 目录中。每个迁移文件的名称都包含了一个时间戳，users为表名。<br>–table 和 –create 选项可用来指定数据表的名称，或是该迁移被执行时会创建的新数据表。这些选项需在预生成迁移文件时填入指定的数据表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">php artisan make:migration add_votes_to_users_table --table&#x3D;users</span><br><span class="line"></span><br><span class="line">php artisan make:migration create_users_table --create&#x3D;users</span><br></pre></td></tr></table></figure>
+<h2 id="迁移结构"><a href="#迁移结构" class="headerlink" title="迁移结构"></a>迁移结构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">use Illuminate\Database\Schema\Blueprint;</span><br><span class="line">use Illuminate\Database\Migrations\Migration;</span><br><span class="line"></span><br><span class="line">class CreateFlightsTable extends Migration</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 运行迁移。</span><br><span class="line">     *</span><br><span class="line">     * @return void</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public function up()</span><br><span class="line">    &#123;</span><br><span class="line">        Schema::create(&#39;flights&#39;, function (Blueprint $table) &#123;</span><br><span class="line">            $table-&gt;increments(&#39;id&#39;);</span><br><span class="line">            $table-&gt;string(&#39;name&#39;);</span><br><span class="line">            $table-&gt;string(&#39;airline&#39;);</span><br><span class="line">            $table-&gt;timestamps();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 还原迁移。</span><br><span class="line">     *</span><br><span class="line">     * @return void</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public function down()</span><br><span class="line">    &#123;</span><br><span class="line">        Schema::drop(&#39;flights&#39;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>drop方法为检测是否有这个数据表，如果有则删除。</p>
+<h2 id="链接非默认的数据库"><a href="#链接非默认的数据库" class="headerlink" title="链接非默认的数据库"></a>链接非默认的数据库</h2><p>使用 connection 方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Schema::connection(&#39;foo&#39;)-&gt;create(&#39;users&#39;, function ($table) &#123;</span><br><span class="line">    $table-&gt;increments(&#39;id&#39;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="字段类型"><a href="#字段类型" class="headerlink" title="字段类型"></a>字段类型</h2><p><a href="https://learnku.com/index.php/docs/laravel/5.2/migrations/1138" target="_blank" rel="noopener">详见laravel文档</a></p>
+<h2 id="运行迁移"><a href="#运行迁移" class="headerlink" title="运行迁移"></a>运行迁移</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan migrate</span><br></pre></td></tr></table></figure>
+<h2 id="线上环境强制运行迁移"><a href="#线上环境强制运行迁移" class="headerlink" title="线上环境强制运行迁移"></a>线上环境强制运行迁移</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan migrate --force</span><br></pre></td></tr></table></figure>
+<h2 id="还原迁移"><a href="#还原迁移" class="headerlink" title="还原迁移"></a>还原迁移</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan migrate:rollback</span><br></pre></td></tr></table></figure>
+<p>还原所有迁移：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan migrate:reset</span><br></pre></td></tr></table></figure>
+
+
 
       
     </div>
@@ -380,7 +381,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/psr/" rel="tag"># psr</a>
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" rel="tag"># 数据迁移</a>
+          
+            <a href="/tags/laravel/" rel="tag"># laravel</a>
           
         </div>
       
@@ -393,8 +396,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/20/MySQL%E7%B4%A2%E5%BC%95/" rel="next" title="MySQL索引">
-                <i class="fa fa-chevron-left"></i> MySQL索引
+              <a href="/2018/12/30/php%20%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" rel="next" title="php 观察者模式">
+                <i class="fa fa-chevron-left"></i> php 观察者模式
               </a>
             
           </div>
@@ -402,10 +405,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/30/php%20%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" rel="prev" title="php 观察者模式">
-                php 观察者模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -457,8 +456,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -522,6 +530,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成迁移"><span class="nav-number">1.</span> <span class="nav-text">生成迁移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迁移结构"><span class="nav-number">2.</span> <span class="nav-text">迁移结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链接非默认的数据库"><span class="nav-number">3.</span> <span class="nav-text">链接非默认的数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字段类型"><span class="nav-number">4.</span> <span class="nav-text">字段类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行迁移"><span class="nav-number">5.</span> <span class="nav-text">运行迁移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线上环境强制运行迁移"><span class="nav-number">6.</span> <span class="nav-text">线上环境强制运行迁移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#还原迁移"><span class="nav-number">7.</span> <span class="nav-text">还原迁移</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
