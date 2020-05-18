@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="小程序," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="：-}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信开发笔记">
+<meta property="og:url" content="http://yoursite.com/2020/04/30/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="苏子佳">
+<meta property="og:description" content="：-}">
+<meta property="article:published_time" content="2020-04-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-05-18T06:34:29.431Z">
+<meta property="article:author" content="苏子佳">
+<meta property="article:tag" content="小程序">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/04/30/微信开发笔记/"/>
+
+
+
+
+
+  <title>微信开发笔记 | 苏子佳</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苏子佳</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/30/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏子佳">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏子佳">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">微信开发笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-30T00:00:00+08:00">
+                2020-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">小程序</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>：-} <a id="more"></a></p>
+<h1 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h1><h2 id="laravel-5-5-20框架"><a href="#laravel-5-5-20框架" class="headerlink" title="laravel 5.5.20框架"></a>laravel 5.5.20框架</h2><p>可以用artisan命令查看框架版本：</p>
+<pre><code>php artisan -V</code></pre><h2 id="composer组件easywechat"><a href="#composer组件easywechat" class="headerlink" title="composer组件easywechat"></a>composer组件easywechat</h2><p>此处要注意版本，我用的是3.0，组件版本不确定会坑。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require &quot;overtrue&#x2F;laravel-wechat:~3.0&quot;</span><br></pre></td></tr></table></figure>
+
+<p>在laravel中配置：</p>
+<p>注册 ServiceProvider:</p>
+<p>Overtrue\LaravelWechat\ServiceProvider::class,</p>
+<pre><code>创建配置文件：</code></pre><p>php artisan vendor:publish –provider=”Overtrue\LaravelWechat\ServiceProvider”</p>
+<pre><code>请修改应用根目录下的 config/wechat.php 中对应的项即可；
+
+（可选）添加外观到 config/app.php 中的 aliases 部分:</code></pre><p>‘EasyWeChat’ =&gt; Overtrue\LaravelWechat\Facade::class,</p>
+<p>参考：<a href="https://github.com/overtrue/laravel-wechat/tree/3.1.10" target="_blank" rel="noopener">GitHub - overtrue/laravel-wechat at 3.1.10</a> 配置OAuth 中间件部分。</p>
+<h2 id="微信公众平台测试账号申请"><a href="#微信公众平台测试账号申请" class="headerlink" title="微信公众平台测试账号申请"></a>微信公众平台测试账号申请</h2><p>微信公众平测试号申请地址：<a href="https://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index" target="_blank" rel="noopener">微信公众平台</a></p>
+<p>laravel以外的用法参考：</p>
+<p><a href="http://www.thinkphp.cn/code/3553.html" target="_blank" rel="noopener">Thinkphp5和EasyWeChat进行网页授权登录 - ThinkPHP框架</a></p>
+<h1 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h1><h2 id="定义路由"><a href="#定义路由" class="headerlink" title="定义路由"></a>定义路由</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">Route::any(&#39;&#x2F;wechat&#39;, &#39;WeChatController@serve&#39;);</span><br><span class="line"></span><br><span class="line">Route::get(&#39;&#x2F;users&#39;, &#39;WeChatController@users&#39;);</span><br><span class="line"></span><br><span class="line">Route::get(&#39;&#x2F;menu&#39;, &#39;WeChatController@menu&#39;);</span><br><span class="line"></span><br><span class="line">Route::get(&#39;&#x2F;addMenu&#39;, &#39;WeChatController@addMenu&#39;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="处理微信的请求消息"><a href="#处理微信的请求消息" class="headerlink" title="处理微信的请求消息"></a>处理微信的请求消息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">&#x2F;**</span><br><span class="line"> * User: maChuang</span><br><span class="line"> * blog: martist.cn</span><br><span class="line"> * Date: 2017&#x2F;11&#x2F;8</span><br><span class="line"> * Time: 下午5:42</span><br><span class="line"> *&#x2F;</span><br><span class="line"></span><br><span class="line">namespace App\Http\Controllers;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">use EasyWeChat\Foundation\Application;</span><br><span class="line"></span><br><span class="line">class WeChatController extends Controller</span><br><span class="line">&#123;</span><br><span class="line">    public $wechat;</span><br><span class="line"></span><br><span class="line">    public function __construct(Application $wechat)</span><br><span class="line">    &#123;</span><br><span class="line">        $this-&gt;wechat &#x3D; $wechat;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 处理微信的请求消息</span><br><span class="line">     *</span><br><span class="line">     * @return string</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public function serve()</span><br><span class="line">    &#123;</span><br><span class="line">        $wechat &#x3D; app(&#39;wechat&#39;);</span><br><span class="line">&#x2F;&#x2F;        $wechat-&gt;server-&gt;setMessageHandler(function($message)&#123;</span><br><span class="line">&#x2F;&#x2F;            return &quot;wocou!!!！&quot;;</span><br><span class="line">&#x2F;&#x2F;        &#125;);</span><br><span class="line">        $userApi &#x3D; $wechat-&gt;user;</span><br><span class="line">        $wechat-&gt;server-&gt;setMessageHandler(function ($message) use ($userApi) &#123;</span><br><span class="line">            switch ($message-&gt;MsgType) &#123;</span><br><span class="line">                case &#39;event&#39;:</span><br><span class="line">                    return &#39;收到事件消息&#39;;</span><br><span class="line">                    break;</span><br><span class="line">                case &#39;text&#39;:</span><br><span class="line">                    return $userApi-&gt;get($message-&gt;FromUserName)-&gt;headimgurl;</span><br><span class="line">                    break;</span><br><span class="line">                case &#39;image&#39;:</span><br><span class="line">                    return &#39;收到图片消息&#39;;</span><br><span class="line">                    break;</span><br><span class="line">                case &#39;voice&#39;:</span><br><span class="line">                    return &#39;收到语音消息&#39;;</span><br><span class="line">                    break;</span><br><span class="line">                case &#39;video&#39;:</span><br><span class="line">                    return &#39;收到视频消息&#39;;</span><br><span class="line">                    break;</span><br><span class="line">                case &#39;location&#39;:</span><br><span class="line">                    return &#39;收到坐标消息&#39;;</span><br><span class="line">                    break;</span><br><span class="line">                case &#39;link&#39;:</span><br><span class="line">                    return &#39;收到链接消息&#39;;</span><br><span class="line">                    break;</span><br><span class="line">                &#x2F;&#x2F; ... 其它消息</span><br><span class="line">                default:</span><br><span class="line">                    return &#39;收到其它消息&#39;;</span><br><span class="line">                    break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        return $wechat-&gt;server-&gt;serve();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * User: maChuang</span><br><span class="line">     * @return \EasyWeChat\Support\Collection</span><br><span class="line">     * 当前公众号的关注者列表</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public function users()</span><br><span class="line">    &#123;</span><br><span class="line">        return $this-&gt;wechat-&gt;user-&gt;lists();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * User: maChuang</span><br><span class="line">     * 展示菜单</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public function menu()</span><br><span class="line">    &#123;</span><br><span class="line">        $app &#x3D; $this-&gt;wechat;</span><br><span class="line">        $menu &#x3D; $app-&gt;menu;</span><br><span class="line">        $menus &#x3D; $menu-&gt;all();</span><br><span class="line">        dd($menus);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * User: maChuang</span><br><span class="line">     * @return \EasyWeChat\Support\Collection</span><br><span class="line">     * 添加菜单</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public function addMenu()</span><br><span class="line">    &#123;</span><br><span class="line">        $app &#x3D; $this-&gt;wechat;</span><br><span class="line">        $menu &#x3D; $app-&gt;menu;</span><br><span class="line">        $buttons &#x3D; [</span><br><span class="line">            [</span><br><span class="line">                &quot;type&quot; &#x3D;&gt; &quot;view&quot;,</span><br><span class="line">                &quot;name&quot; &#x3D;&gt; &quot;授权&quot;,</span><br><span class="line">                &quot;url&quot;  &#x3D;&gt; &quot;http:&#x2F;&#x2F;c7971ad2.ngrok.io&#x2F;scopes&quot;</span><br><span class="line">            ],</span><br><span class="line">            [</span><br><span class="line">                &quot;name&quot;       &#x3D;&gt; &quot;二级菜单&quot;,</span><br><span class="line">                &quot;sub_button&quot; &#x3D;&gt; [</span><br><span class="line">                    [</span><br><span class="line">                        &quot;type&quot; &#x3D;&gt; &quot;view&quot;,</span><br><span class="line">                        &quot;name&quot; &#x3D;&gt; &quot;我的信息&quot;,</span><br><span class="line">                        &quot;url&quot;  &#x3D;&gt; &quot;http:&#x2F;&#x2F;c7971ad2.ngrok.io&#x2F;userInfo&quot;,</span><br><span class="line">                    ],</span><br><span class="line">                    [</span><br><span class="line">                        &quot;type&quot; &#x3D;&gt; &quot;view&quot;,</span><br><span class="line">                        &quot;name&quot; &#x3D;&gt; &quot;大大大&quot;,</span><br><span class="line">                        &quot;url&quot;  &#x3D;&gt; &quot;http:&#x2F;&#x2F;c7971ad2.ngrok.io&#x2F;large&quot;,</span><br><span class="line">                    ],</span><br><span class="line">                    [</span><br><span class="line">                        &quot;type&quot; &#x3D;&gt; &quot;click&quot;,</span><br><span class="line">                        &quot;name&quot; &#x3D;&gt; &quot;小小小&quot;,</span><br><span class="line">                        &quot;key&quot; &#x3D;&gt; &quot;ASDZFE&quot;</span><br><span class="line">                    ],</span><br><span class="line">                ],</span><br><span class="line">            ],</span><br><span class="line">        ];</span><br><span class="line">        $res &#x3D; $menu-&gt;add($buttons);</span><br><span class="line">        return $res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此时，你可以在公众号发现添加自定义菜单，查看菜单，查看公众号关注者，回复信息等功能已经简单的实现了。</p>
+<h2 id="获取用户的openid和微信信息"><a href="#获取用户的openid和微信信息" class="headerlink" title="获取用户的openid和微信信息"></a>获取用户的openid和微信信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Route::group([&#39;middleware&#39; &#x3D;&gt; [&#39;wechat.oauth&#39;]], function () &#123;</span><br><span class="line"></span><br><span class="line">    Route::get(&#39;&#x2F;userInfo&#39;, function () &#123;</span><br><span class="line">        $user &#x3D; session(&#39;wechat.oauth_user&#39;); &#x2F;&#x2F; 拿到授权用户资料</span><br><span class="line">        dd($user);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="返回结果"><a href="#返回结果" class="headerlink" title="返回结果"></a>返回结果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;subscribe&quot;: 1,</span><br><span class="line">    &quot;openid&quot;: &quot;oCf0jw4DhUXmv6ZhITtBRFn3yLM4&quot;,</span><br><span class="line">    &quot;nickname&quot;: &quot;🎗martist.cn马闯🎗&quot;,</span><br><span class="line">    &quot;sex&quot;: 1,</span><br><span class="line">    &quot;language&quot;: &quot;zh_CN&quot;,</span><br><span class="line">    &quot;city&quot;: &quot;石家庄&quot;,</span><br><span class="line">    &quot;province&quot;: &quot;河北&quot;,</span><br><span class="line">    &quot;country&quot;: &quot;中国&quot;,</span><br><span class="line">    &quot;headimgurl&quot;: &quot;http:&#x2F;&#x2F;wx.qlogo.cn&#x2F;mmopen&#x2F;9VvH5ZWanZUKiaGbMrMsWeyl1E4yFWJCic5iblA5FSyVcYSPjkUElLsHO697rFgv81DibzNjeVicpTUEruEg3Nbfn7YTDWoquz78f&#x2F;0&quot;,</span><br><span class="line">    &quot;subscribe_time&quot;: 1510198660,</span><br><span class="line">    &quot;remark&quot;: &quot;&quot;,</span><br><span class="line">    &quot;groupid&quot;: 0,</span><br><span class="line">    &quot;tagid_list&quot;: []</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>其他操作可以具体参见微信公众号官方文档，我在做微信开发和微信支付都是基于eastWeChat这个组件完成的，节省了很多时间。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag"># 小程序</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/13/Nginx%20+%20PHP%EF%BC%88php-fpm%EF%BC%89%E9%81%87%E5%88%B0%E7%9A%84502%20Bad%20Gateway%E9%94%99%E8%AF%AF/" rel="next" title="nginx的502问题">
+                <i class="fa fa-chevron-left"></i> nginx的502问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="苏子佳" />
+            
+              <p class="site-author-name" itemprop="name">苏子佳</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#开发环境"><span class="nav-number">1.</span> <span class="nav-text">开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#laravel-5-5-20框架"><span class="nav-number">1.1.</span> <span class="nav-text">laravel 5.5.20框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#composer组件easywechat"><span class="nav-number">1.2.</span> <span class="nav-text">composer组件easywechat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信公众平台测试账号申请"><span class="nav-number">1.3.</span> <span class="nav-text">微信公众平台测试账号申请</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开发"><span class="nav-number">2.</span> <span class="nav-text">开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义路由"><span class="nav-number">2.1.</span> <span class="nav-text">定义路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理微信的请求消息"><span class="nav-number">2.2.</span> <span class="nav-text">处理微信的请求消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取用户的openid和微信信息"><span class="nav-number">2.3.</span> <span class="nav-text">获取用户的openid和微信信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#返回结果"><span class="nav-number">2.3.1.</span> <span class="nav-text">返回结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">苏子佳</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
