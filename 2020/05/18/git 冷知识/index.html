@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="php,常识," />
+  <meta name="keywords" content="git," />
 
 
 
@@ -81,15 +81,14 @@
 
 <meta name="description" content="☺">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php获取文件目录路径">
-<meta property="og:url" content="http://yoursite.com/2020/03/22/php%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E8%B7%AF%E5%BE%84/index.html">
+<meta property="og:title" content="git 冷知识">
+<meta property="og:url" content="http://yoursite.com/2020/05/18/git%20%E5%86%B7%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="苏子佳">
 <meta property="og:description" content="☺">
-<meta property="article:published_time" content="2020-03-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-05-18T06:18:39.648Z">
+<meta property="article:published_time" content="2020-05-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-05-18T09:43:05.434Z">
 <meta property="article:author" content="苏子佳">
-<meta property="article:tag" content="php">
-<meta property="article:tag" content="常识">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/22/php获取文件目录路径/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/05/18/git 冷知识/"/>
 
 
 
 
 
-  <title>php获取文件目录路径 | 苏子佳</title>
+  <title>git 冷知识 | 苏子佳</title>
   
 
 
@@ -253,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/22/php%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E8%B7%AF%E5%BE%84/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/18/git%20%E5%86%B7%E7%9F%A5%E8%AF%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="苏子佳">
@@ -270,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">php获取文件目录路径</h1>
+          <h1 class="post-title" itemprop="name headline">git 冷知识</h1>
         
 
         <div class="post-meta">
@@ -282,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-22T00:00:00+08:00">
-                2020-03-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-18T00:00:00+08:00">
+                2020-05-18
               </time>
             
 
@@ -305,8 +304,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/php/" itemprop="url" rel="index">
-                    <span itemprop="name">php</span>
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
                   </a>
                 </span>
 
@@ -348,76 +347,17 @@
 
       
         <pre><code>☺</code></pre><a id="more"></a>
-<p>具体代码如下：</p>
-<pre><code>&lt;?php
+<p>查看远程仓库地址 git remote -v<br>查看远程仓库信息git remote show 仓库名<br>查看远程仓库详细信息$git remote show 仓库名<br>添加远程仓库git remote add 名字 地址<br>重命名远程仓库git remote rename old new<br>删除远程仓库 git remote rm 仓库名</p>
+<p>git checkout a 切换到a分支<br>git checkout -b new 切换到新建的new分支<br>git checkout - - test.txt 撤销工作区的修改</p>
+<p><strong>如何知道单个文件的提交记录，查看一段代码是什么时候修改的</strong><br>  git log –pretty = oneline 文件路径   获取某个文件的提交路径<br>  git show 6b14b5883e5a03d5e2110eb78633f622e81a36ac 文件路径   查看某一次的修改</p>
+<p><strong>如何成功的添加忽略【情况两种，1是未添加未生成的文件。2是已经被索引跟踪的文件】。”</strong><br>  1创建.gitignore文件 在文件里写入要忽略的文件<br>   2删除暂存, 重新添加   git rm -r –cached. &amp;&amp;git add .</p>
+<p><strong>当前任务中插入一个优先级高的任务需要提下手头工作去做，详述git操作流程</strong><br>  git stash 保存当前进度<br>  然后切换到另一个分支去做<br>  做完之后 git stash pop 恢复最新进度到工作区<br>（git stash list显示保存进度的列表。<br>git stash pop –index 恢复最新的进度到工作区和暂存区。（尝试将原来暂存区的改动还恢复到暂存区）<br>git stash pop stash@{1}             恢复指定的进度到工作区。stash_id是通过git stash list命令得到的<br>通过git stash pop命令恢复进度后，会删除当前进度。<br>git stash apply [–index] [stash_id]    除了不删除恢复的进度之外，其余和git stash pop 命令一样。<br>git stash drop [stash_id]   删除一个存储的进度。如果不指定stash_id，则默认删除最新的存储进度。<br>git stash clear   删除所有存储的进度。）</p>
+<p><strong>git库所在的文件夹中的文件大致有4种状态</strong><br>Untracked: 未跟踪, 此文件在文件夹中, 但并没有加入到git库, 不参与版本控制. 通过git add 状态变为Staged.<br>Unmodify: 文件已经入库, 未修改, 即版本库中的文件快照内容与文件夹中完全一致. 这种类型的文件有两种去处, 如果它被修改, 而变为Modified. 如果使用git rm移出版本库, 则成为Untracked文件<br>Modified: 文件已修改, 仅仅是修改, 并没有进行其他的操作. 这个文件也有两个去处, 通过git add可进入暂存staged状态, 使用git checkout 则丢弃修改过, 返回到unmodify状态, 这个git checkout即从库中取出文件, 覆盖当前修改<br>Staged: 暂存状态. 执行git commit则将修改同步到库中, 这时库中的文件和本地文件又变为一致, 文件为Unmodify状态. 执行git reset HEAD filename取消暂存, 文件状态为Modified</p>
+<p><strong>选择一个commit，合并进当前分支</strong><br>  $ git cherry-pick [commit]<br> 支持一次性拿多个<br>git cherry-pick master<del>4 master</del>2<br> 支持区间, 区间中间是 ..<br>git cherry-pick startGitSha1..endGitSha1</p>
+<p> <strong>新修改的内容,添加到上次提交中,减少提交的日志</strong><br>git commit –amend –no-edit</p>
+<p><strong>当本地分支存在，远程分支不存在的时侯，可以这样推送关联的远程分支</strong><br> 这样会直接新建一个同名的远程分支<br>git push origin localbranch </p>
+<p><strong>revert 可以平稳的回滚代码,但却保留提交记录,不会让协作的人各种冲突！</strong><br> 回滚到某个 commit<br>git revert commit-sha1</p>
 
-/**
-
-* PHP获取路径或目录实现
-
-*/
-
-
-
-//魔术变量，获取当前文件的绝对路径
-
-echo &quot;__FILE__: ========&gt; &quot;.__FILE__;
-
-echo &apos;&lt;br/&gt;&apos;;
-
-
-
-//魔术变量，获取当前脚本的目录
-
-echo &quot;__DIR__: ========&gt; &quot;.__DIR__;
-
-echo &apos;&lt;br/&gt;&apos;;
-
-
-
-//dirname返回路径的目录部分,dirname(__FILE__)相当于__DIR__
-
-echo &quot;dirname(__FILE__): ========&gt; &quot;.dirname(__FILE__);
-
-echo &apos;&lt;br/&gt;&apos;;
-
-
-
-//$_SERVER[&apos;PHP_SELF&apos;]和$_SERVER[&apos;SCRIPT_NAME&apos;]的结果一般相同，他们都是获取当前脚本的文件名
-
-//只有当php以cgi方式运行时有区别，但是现在几乎找不到以cgi方式运行php了
-
-echo &apos;$_SERVER[&quot;PHP_SELF&quot;]: ========&gt; &apos;.$_SERVER[&apos;PHP_SELF&apos;];
-
-echo &apos;&lt;br/&gt;&apos;;
-
-
-
-echo &apos;$_SERVER[&quot;SCRIPT_NAME&quot;]: ========&gt; &apos;.$_SERVER[&apos;SCRIPT_NAME&apos;];
-
-echo &apos;&lt;br/&gt;&apos;;
-
-
-
-//当前执行脚本的绝对路径。记住，在CLI方式运行php是获取不到的
-
-echo &apos;$_SERVER[&quot;SCRIPT_FILENAME&quot;]: ========&gt; &apos;.$_SERVER[&apos;SCRIPT_FILENAME&apos;];
-
-echo &apos;&lt;br/&gt;&apos;;
-
-
-
-//当前运行脚本所在的文档根目录。在服务器配置文件中定义。
-
-echo &apos;$_SERVER[&quot;DOCUMENT_ROOT&quot;]: ========&gt; &apos;.$_SERVER[&apos;DOCUMENT_ROOT&apos;];
-
-echo &apos;&lt;br&gt;&apos;;
-
-
-
-//getcwd()返回当前工作目录
-
-echo &quot;getcwd(): ========&gt; &quot;.getcwd();</code></pre>
       
     </div>
     
@@ -434,9 +374,7 @@ echo &quot;getcwd(): ========&gt; &quot;.getcwd();</code></pre>
       
         <div class="post-tags">
           
-            <a href="/tags/php/" rel="tag"># php</a>
-          
-            <a href="/tags/%E5%B8%B8%E8%AF%86/" rel="tag"># 常识</a>
+            <a href="/tags/git/" rel="tag"># git</a>
           
         </div>
       
@@ -449,8 +387,8 @@ echo &quot;getcwd(): ========&gt; &quot;.getcwd();</code></pre>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/15/%E6%8E%92%E5%BA%8F/" rel="next" title="php的排序算法">
-                <i class="fa fa-chevron-left"></i> php的排序算法
+              <a href="/2020/04/30/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/" rel="next" title="微信开发笔记">
+                <i class="fa fa-chevron-left"></i> 微信开发笔记
               </a>
             
           </div>
@@ -458,10 +396,6 @@ echo &quot;getcwd(): ========&gt; &quot;.getcwd();</code></pre>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/13/Nginx%20+%20PHP%EF%BC%88php-fpm%EF%BC%89%E9%81%87%E5%88%B0%E7%9A%84502%20Bad%20Gateway%E9%94%99%E8%AF%AF/" rel="prev" title="nginx的502问题">
-                nginx的502问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
