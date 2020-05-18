@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="http,web," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="☺">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP状态码">
+<meta property="og:url" content="http://yoursite.com/2019/06/10/HTTP%E7%8A%B6%E6%80%81301%E3%80%81404%E3%80%81200%E3%80%81304%E7%AD%89%E7%9A%84%E6%84%8F%E6%80%9D/index.html">
+<meta property="og:site_name" content="苏子佳">
+<meta property="og:description" content="☺">
+<meta property="article:published_time" content="2019-06-10T12:10:32.000Z">
+<meta property="article:modified_time" content="2020-05-18T03:51:45.791Z">
+<meta property="article:author" content="苏子佳">
+<meta property="article:tag" content="http">
+<meta property="article:tag" content="web">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/06/10/HTTP状态301、404、200、304等的意思/"/>
+
+
+
+
+
+  <title>HTTP状态码 | 苏子佳</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苏子佳</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/10/HTTP%E7%8A%B6%E6%80%81301%E3%80%81404%E3%80%81200%E3%80%81304%E7%AD%89%E7%9A%84%E6%84%8F%E6%80%9D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏子佳">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏子佳">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTTP状态码</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-10T20:10:32+08:00">
+                2019-06-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <pre><code>☺</code></pre><a id="more"></a>
+
+<h2 id="一些常见的状态码"><a href="#一些常见的状态码" class="headerlink" title="一些常见的状态码"></a>一些常见的状态码</h2><pre><code>200 - 服务器成功返回网页
+404 - 请求的网页不存在
+304 - Not Modified. 原来缓冲的还可以使用
+500 - 大多是代码问题，或者sql报错
+501 - 服务器不具备完成请求的功能
+502 - Bad Gateway fpm进程挂掉或者后端程序过长时间未返回。
+503 - Service Unavailable 当遇到这个状态码的时候表示服务临时不可用，比如nginx配置了频率限制而client端又超过了配置的限制后就会收到503的响应。
+504 - Gateway Time-out nginx的fastcgi模块有一个fastcgi_read_timeout配置，它表示从FastCGI server获取数据的超时时间。如果超过这个配置客户端就是收到504的响应。</code></pre><h2 id="HTTP-状态码的完整列表"><a href="#HTTP-状态码的完整列表" class="headerlink" title="HTTP 状态码的完整列表"></a>HTTP 状态码的完整列表</h2><pre><code>　　**1xx(**临时响应)
+　　表示临时响应并需要请求者继续执行操作的状态码。
+
+　　**100**(继续)请求者应当继续提出请求。服务器返回此代码表示已收到请求的第一部分，正在等待其余部分。
+　　**101**(切换协议)请求者已要求服务器切换协议，服务器已确认并准备切换。
+　　**2xx** (成功)
+　　表示成功处理了请求的状态码。
+　　**200**(成功)服务器已成功处理了请求。通常，这表示服务器提供了请求的网页。如果是对您的 robots.txt 文件显示此状态码，则表示 Googlebot 已成功检索到该文件。
+　　**201**(已创建)请求成功并且服务器创建了新的资源。
+　　**202**(已接受)服务器已接受请求，但尚未处理。
+　　**203**(非授权信息)服务器已成功处理了请求，但返回的信息可能来自另一来源。
+　　**204**(无内容)服务器成功处理了请求，但没有返回任何内容。
+　　**205**(重置内容)服务器成功处理了请求，但没有返回任何内容。与 204 响应不同，此响应要求请求者重置文档视图(例如，清除表单内容以输入新内容)。
+　　**206**(部分内容)服务器成功处理了部分 GET 请求。
+　　**3xx **(重定向)
+　　要完成请求，需要进一步操作。通常，这些状态码用来重定向。Google 建议您在每次请求中使用重定向不要超过 5 次。您可以使用网站管理员工具查看一下 Googlebot 在抓取重定向网页时是否遇到问题。诊断下的网络抓取页列出了由于重定向错误导致 Googlebot 无法抓取的网址。
+　　**300**(多种选择)针对请求，服务器可执行多种操作。服务器可根据请求者 (user agent) 选择一项操作，或提供操作列表供请求者选择。
+　　**301**(永久移动)请求的网页已永久移动到新位置。服务器返回此响应(对 GET 或 HEAD 请求的响应)时，会自动将请求者转到新位置。您应使用此代码告诉 Googlebot 某个网页或网站已永久移动到新位置。
+　　**302**(临时移动)服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来响应以后的请求。此代码与响应 GET 和 HEAD 请求的 301 代码类似，会自动将请求者转到不同的位置，但您不应使用此代码来告诉 Googlebot 某个网页或网站已经移动，因为 Googlebot 会继续抓取原有位置并编制索引。
+　　**303**(查看其他位置)请求者应当对不同的位置使用单独的 GET 请求来检索响应时，服务器返回此代码。对于除 HEAD 之外的所有请求，服务器会自动转到其他位置。
+　　**304**(未修改)自从上次请求后，请求的网页未修改过。服务器返回此响应时，不会返回网页内容。</code></pre><h2 id="304的正确理解"><a href="#304的正确理解" class="headerlink" title="304的正确理解"></a>304的正确理解</h2><p>304 的标准解释是：Not Modified 客户端有缓冲的文档并发出了一个条件性的请求（一般是提供If-Modified-Since头表示客户只想比指定日期更新的文档）。服务器告诉客户，原来缓冲的文档还可以继续使用。</p>
+<p>如 果客户端在请求一个文件的时候，发现自己缓存的文件有 Last Modified ，那么在请求中会包含 If Modified Since ，这个时间就是缓存文件的 Last Modified 。因此，如果请求中包含 If Modified Since，就说明已经有缓存在客户端。只要判断这个时间和当前请求的文件的修改时间就可以确定是返回 304 还是 200 。对于静态文件，例如：CSS、图片，服务器会自动完成 Last Modified 和 If Modified Since 的比较，完成缓存或者更新。但是对于动态页面，就是动态产生的页面，往往没有包含 Last Modified 信息，这样浏览器、网关等都不会做缓存，也就是在每次请求的时候都完成一个 200 的请求。<br>因此，对于动态页面做缓存加速，首先要在 Response 的 HTTP Header 中增加 Last Modified 定义，其次根据 Request 中的 If Modified Since 和被请求内容的更新时间来返回 200 或者 304 。虽然在返回 304 的时候已经做了一次数据库查询，但是可以避免接下来更多的数据库查询，并且没有返回页面内容而只是一个 HTTP Header，从而大大的降低带宽的消耗，对于用户的感觉也是提高。</p>
+<p>如果网页自请求者上次请求后再也没有更改过，您应将服务器配置为返回此响应(称为 If-Modified-Since HTTP 标头)。服务器可以告诉 Googlebot 自从上次抓取后网页没有变更，进而节省带宽和开销。</p>
+<p>整个请求响应过程如下：</p>
+<p>客户端在请求一个文件的时候，发现自己缓存的文件有 Last Modified ，那么在请求中会包含 If Modified Since ，这个时间就是缓存文件的 Last Modified 。因此，如果请求中包含 If Modified Since，就说明已经有缓存在客户端。服务端只要判断这个时间和当前请求的文件的修改时间就可以确定是返回 304 还是 200 。<br>对于静态文件，例如：CSS、图片，服务器会自动完成 Last Modified 和 If Modified Since 的比较，完成缓存或者更新。但是对于动态页面，就是动态产生的页面，往往没有包含 Last Modified 信息，这样浏览器、网关等都不会做缓存，也就是在每次请求的时候都完成一个 200 的请求。<br>因此，对于动态页面做缓存加速，首先要在 Response 的 HTTP Header 中增加 Last Modified 定义，其次根据 Request 中的 If Modified Since 和被请求内容的更新时间来返回 200 或者 304 。虽然在返回 304 的时候已经做了一次数据库查询，但是可以避免接下来更多的数据库查询，并且没有返回页面内容而只是一个 HTTP Header，从而大大的降低带宽的消耗，对于用户的感觉也是提高。当这些缓存有效的时候，</p>
+<p>可以参考：<a href="https://blog.csdn.net/huwei2003/article/details/70139062" target="_blank" rel="noopener">https://blog.csdn.net/huwei2003/article/details/70139062</a></p>
+<h2 id="500，502，503，504代表什么意思"><a href="#500，502，503，504代表什么意思" class="headerlink" title="500，502，503，504代表什么意思"></a>500，502，503，504代表什么意思</h2><h3 id="500错误"><a href="#500错误" class="headerlink" title="500错误"></a>500错误</h3><p>1、500 Internal Server Error 内部服务错误：顾名思义500错误一般是服务器遇到意外情况，而无法完成请求。</p>
+<p>2、500出错的可能性：</p>
+<p>a、编程语言语法错误，web脚本错误</p>
+<p>b、并发高时，因为系统资源限制，而不能打开过多的文件</p>
+<p>3、一般解决思路：</p>
+<p>a、查看nginx、php的错误日志文件，从而看出端倪</p>
+<p>b、如果是too many open files，修改nginx的worker_rlimit_nofile参数，使用ulimit查看系统打开文件限制，修改/etc/security/limits.conf，还是出现too many open files，那就要考虑做负载均衡，把流量分散到不同服务器上去了</p>
+<p>c、如果是脚本的问题，则需要修复脚本错误，优化代码</p>
+<h3 id="502、504错误"><a href="#502、504错误" class="headerlink" title="502、504错误　"></a>502、504错误　</h3><p>1、502 Bad Gateway错误、<br>   504 Bad Gateway timeout 网关超时</p>
+<p>2、502、504出现的可能性</p>
+<p>　　web服务器故障、程序进程不够</p>
+<p>3、一般解决思路</p>
+<p>a、使用nginx代理，而后端服务器发生故障；或者php-cgi进程数不够用；php执行时间长，或者是php-cgi进程死掉；已经fastCGI使用情况等都会导致502、504错误。</p>
+<p>b、502 是指请求的php-fpm已经执行，但是由于某种原因而没有执行完毕，最终导致php-fpm进程终止。一般来说，与php-fpm.conf的设置有关，也与php的执行程序性能有关，网站的访问量大，而php-cgi的进程数偏少。针对这种情况的502错误，只需增加            php-cgi的进程数。具体就是修改/usr/local/php/etc/php-fpm.conf文件，将其中的max_children值适当增加。这个数据要依据你的服务器的配置进行设置。一般一个php-cgi进程占20M内存，你可以自己计算下，适量增多。然后php-fpm然后重启一下.</p>
+<p>c、504 表示超时，也就是客户端所发出的请求没有到达网关，请求没有到可以执行的php-fpm。与nginx.conf的配置也有关系。</p>
+<h2 id="php-nginx的实例"><a href="#php-nginx的实例" class="headerlink" title="php+nginx的实例"></a>php+nginx的实例</h2><pre><code>以nginx作为web server
+以php为后台语言</code></pre><p>500：大多是代码问题，或者sql报错。<br>501：服务器不具备完成请求的功能。例如，服务器无法识别请求方法时可能会返回此代码。<br>502：nginx在这里充当的是反向代理服务器的角色，是把http协议请求转成fastcgi协议的请求，通过fastcgi_pass指令传递给php-fpm进程，当php-fpm进程响应的内容是nginx无法理解的响应，就会返回502 bad gateway<br>503：服务器目前无法使用（由于超载或停机维护）。通常，这只是暂时状态。（服务不可用）。一个http请求占用一个php-fpm进程，瞬时请求量过大时，没有足够的php-fpm进程去处理请求，就会返回503 service unavailable<br>504:单个php-fpm进程阻塞超过nginx的时间阈值返回504 gateway timeout<br>505：服务器不支持请求中所用的 HTTP 协议版本。（HTTP 版本不受支持）</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjkxMzMyNg==&amp;mid=2654068952&amp;idx=1&amp;sn=1bd63a71610d73fcd563888d6f93398d&amp;scene=24&amp;srcid=0804843QrwLCsKWGYxfPum2H#wechat_redirect" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MzA4MjkxMzMyNg==&amp;mid=2654068952&amp;idx=1&amp;sn=1bd63a71610d73fcd563888d6f93398d&amp;scene=24&amp;srcid=0804843QrwLCsKWGYxfPum2H#wechat_redirect</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/http/" rel="tag"># http</a>
+          
+            <a href="/tags/web/" rel="tag"># web</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/07/nginx%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E9%87%8D%E5%AE%9A%E5%90%91/" rel="next" title="nginx如何配置重定向">
+                <i class="fa fa-chevron-left"></i> nginx如何配置重定向
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/30/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="prev" title="git常用命令">
+                git常用命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="苏子佳" />
+            
+              <p class="site-author-name" itemprop="name">苏子佳</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一些常见的状态码"><span class="nav-number">1.</span> <span class="nav-text">一些常见的状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-状态码的完整列表"><span class="nav-number">2.</span> <span class="nav-text">HTTP 状态码的完整列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#304的正确理解"><span class="nav-number">3.</span> <span class="nav-text">304的正确理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#500，502，503，504代表什么意思"><span class="nav-number">4.</span> <span class="nav-text">500，502，503，504代表什么意思</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#500错误"><span class="nav-number">4.1.</span> <span class="nav-text">500错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#502、504错误"><span class="nav-number">4.2.</span> <span class="nav-text">502、504错误　</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#php-nginx的实例"><span class="nav-number">5.</span> <span class="nav-text">php+nginx的实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">苏子佳</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
