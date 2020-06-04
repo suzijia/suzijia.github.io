@@ -318,6 +318,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/22/php%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E8%B7%AF%E5%BE%84/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/22/php%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E8%B7%AF%E5%BE%84/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -490,6 +500,9 @@ echo &quot;getcwd(): ========&gt; &quot;.getcwd();</code></pre>
 
           
 
+  
+    <div class="comments" id="comments">
+    </div>
   
 
 
@@ -776,6 +789,28 @@ echo &quot;getcwd(): ========&gt; &quot;.getcwd();</code></pre>
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'O2v9aCP3AnE4LCxsJEgg1BpO-gzGzoHsz',
+        appKey: 'IrzPnkUi59anYAxsncpKjqlI',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
