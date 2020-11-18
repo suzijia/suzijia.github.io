@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="数据库," />
+  <meta name="keywords" content="php," />
 
 
 
@@ -81,15 +81,17 @@
 
 <meta name="description" content="☺">
 <meta property="og:type" content="article">
-<meta property="og:title" content="存储过程和事务">
-<meta property="og:url" content="http://yoursite.com/2020/06/03/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E5%92%8C%E4%BA%8B%E5%8A%A1/index.html">
+<meta property="og:title" content="php垃圾回收">
+<meta property="og:url" content="http://yoursite.com/2020/11/18/php%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/index.html">
 <meta property="og:site_name" content="苏子佳">
 <meta property="og:description" content="☺">
-<meta property="article:published_time" content="2020-06-02T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-06-03T01:57:28.283Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201118184128698.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzI4OTMw,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2020-11-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-11-18T10:54:09.528Z">
 <meta property="article:author" content="苏子佳">
-<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="php">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20201118184128698.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzI4OTMw,size_16,color_FFFFFF,t_70#pic_center">
 
 
 
@@ -119,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/06/03/存储过程和事务/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/11/18/php垃圾回收机制/"/>
 
 
 
 
 
-  <title>存储过程和事务 | 苏子佳</title>
+  <title>php垃圾回收 | 苏子佳</title>
   
 
 
@@ -252,7 +254,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/03/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E5%92%8C%E4%BA%8B%E5%8A%A1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/18/php%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="苏子佳">
@@ -269,7 +271,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">存储过程和事务</h1>
+          <h1 class="post-title" itemprop="name headline">php垃圾回收</h1>
         
 
         <div class="post-meta">
@@ -281,8 +283,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-03T00:00:00+08:00">
-                2020-06-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-11-18T00:00:00+08:00">
+                2020-11-18
               </time>
             
 
@@ -304,8 +306,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
+                  <a href="/categories/php/" itemprop="url" rel="index">
+                    <span itemprop="name">php</span>
                   </a>
                 </span>
 
@@ -322,8 +324,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/06/03/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E5%92%8C%E4%BA%8B%E5%8A%A1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/03/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E5%92%8C%E4%BA%8B%E5%8A%A1/" itemprop="commentCount"></span>
+                <a href="/2020/11/18/php%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/11/18/php%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -357,7 +359,33 @@
 
       
         <pre><code>☺</code></pre><a id="more"></a>
-<p>事务中可以有存储过程 存储过程中也可以有事务。<br><strong>存储过程</strong><br>一组为了完成特定功能的sql语句集，存储在数据库服务端，可以远程调用。<br>优点：<br>1、执行速度快<br>2、提高工作效率，实现简单，一般调用一两行代码就可以实现。<br>3、规范程序设计，升级、维护方便。<br>4、提高系统安全性，只有设定用户才可以进行操作。<br>缺点：<br>没有遵循MVC模式。<br><strong>事务</strong><br>事务中的操作是一个整体，要么整体完成，要么整体不做。保证了数据的完整性。<br>四大特性：<br>1、原子性：整个事务中的所有操作，要么全部完成，要么全部不完成，不可能停滞在中间某个环节。事务在执行过程中发生错误，会被回滚（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。<br>2、一致性：在事务开始之前和事务结束以后，数据库的完整性约束没有被破坏。<br>3、隔离性：隔离状态执行事务，使它们好像是系统在给定时间内执行的唯一操作。如果有两个事务，运行在相同的时间内，执行 相同的功能，事务的隔离性将确保每一事务在系统中认为只有该事务在使用系统。这种属性有时称为串行化，为了防止事务操作间的混淆，  必须串行化或序列化请 求，使得在同一时间仅有一个请求用于同一数据。<br>4、持久性：在事务完成以后，该事务所对数据库所作的更改便持久的保存在数据库之中，并不会被回滚。</p>
+<ul>
+<li>引用计数</li>
+</ul>
+<p>php变量存在”zval“容器之中，”zval“中除了存变量的 类型和值，还存两个额外的信息，is_ref和refcount。<br> 第一个是”is_ref”，是个bool值，用来标识这个变量是否是属于引用集合(reference set)。通过这个字节，php引擎才能把普通变量和引用变量区分开来，由于php允许用户通过使用&amp;来使用自定义引用，zval变量容器中还有一个内部引用计数机制，来优化内存使用。<br> 第二个额外字节是”refcount”，用以表示指向这个zval变量容器的变量(也称符号即symbol)个数。所有的符号存在一个符号表中，其中每个符号都有作用域(scope)，那些主脚本(比如：通过浏览器请求的的脚本)和每个函数或者方法也都有作用域。<br>例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$a &#x3D; &quot;new string&quot;;</span><br><span class="line">?&gt;</span><br><span class="line">xdebug_debug_zval(&#39;a&#39;);</span><br></pre></td></tr></table></figure>
+<p>输出<br>a: (refcount=1, is_ref=0)=’new string’</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$a &#x3D; &quot;new string&quot;;</span><br><span class="line">$b &#x3D; $a;</span><br><span class="line">xdebug_debug_zval( &#39;a&#39; );</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>输出<br>a: (refcount=2, is_ref=0)=’new string’</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$a &#x3D; &quot;new string&quot;;</span><br><span class="line">$c &#x3D; $b &#x3D; $a;</span><br><span class="line">xdebug_debug_zval( &#39;a&#39; );</span><br><span class="line">unset( $b, $c );</span><br><span class="line">xdebug_debug_zval( &#39;a&#39; );</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>输出<br>a: (refcount=3, is_ref=0)=’new string’<br>a: (refcount=1, is_ref=0)=’new string’</p>
+<ul>
+<li>回收周期</li>
+</ul>
+<p> 如果一个引用计数增加，它将继续被使用，当然就不再在垃圾中。如果引用计数减少到零，所在变量容器将被清除(free)。就是说，仅仅在引用计数减少到非零值时，才会产生垃圾周期(garbage cycle)。其次，在一个垃圾周期中，通过检查引用计数是否减1，并且检查哪些变量容器的引用次数是零，来发现哪部分是垃圾。<br><img src="https://img-blog.csdnimg.cn/20201118184128698.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNzI4OTMw,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>为避免不得不检查所有引用计数可能减少的垃圾周期，这个算法把所有可能根(possible roots 都是zval变量容器),放在根缓冲区(root buffer)中(用紫色来标记，称为疑似垃圾)，这样可以同时确保每个可能的垃圾根(possible garbage root)在缓冲区中只出现一次。仅仅在根缓冲区满了时，才对缓冲区内部所有不同的变量容器执行垃圾回收操作。看上图的步骤 A。</p>
+<p>在步骤 B 中，模拟删除每个紫色变量。模拟删除时可能将不是紫色的普通变量引用数减”1”，如果某个普通变量引用计数变成0了，就对这个普通变量再做一次模拟删除。每个变量只能被模拟删除一次，模拟删除后标记为灰（原文说确保不会对同一个变量容器减两次”1”,不对的吧）。</p>
+<p>在步骤 C 中，模拟恢复每个紫色变量。恢复是有条件的，当变量的引用计数大于0时才对其做模拟恢复。同样每个变量只能恢复一次，恢复后标记为黑，基本就是步骤 B 的逆运算。这样剩下的一堆没能恢复的就是该删除的蓝色节点了，在步骤 D 中遍历出来真的删除掉。</p>
+<p>算法中都是模拟删除、模拟恢复、真的删除，都使用简单的遍历即可（最典型的深搜遍历）。复杂度为执行模拟操作的节点数正相关，不只是紫色的那些疑似垃圾变量。</p>
+<ul>
+<li>关于配置</li>
+</ul>
+<p> 现在，你已经对这个算法有了基本了解，我们回头来看这个如何与PHP集成。默认的，PHP的垃圾回收机制是打开的，然后有个 php.ini 设置允许你修改它：zend.enable_gc。</p>
+<p>当垃圾回收机制打开时，每当根缓存区存满时，就会执行上面描述的循环查找算法。根缓存区有固定的大小，可存10,000个可能根,当然你可以通过修改PHP源码文件Zend/zend_gc.c中的常量GC_ROOT_BUFFER_MAX_ENTRIES，然后重新编译PHP，来修改这个10,000值。当垃圾回收机制关闭时，循环查找算法永不执行，然而，可能根将一直存在根缓冲区中，不管在配置中垃圾回收机制是否激活。</p>
+<p>当垃圾回收机制关闭时，如果根缓冲区存满了可能根，更多的可能根显然不会被记录。那些没被记录的可能根，将不会被这个算法来分析处理。如果他们是循环引用周期的一部分，将永不能被清除进而导致内存泄漏。</p>
+<p>即使在垃圾回收机制不可用时，可能根也被记录的原因是，相对于每次找到可能根后检查垃圾回收机制是否打开而言，记录可能根的操作更快。不过垃圾回收和分析机制本身要耗不少时间。</p>
+<p>除了修改配置zend.enable_gc，也能通过分别调用gc_enable() 和 gc_disable()函数来打开和关闭垃圾回收机制。调用这些函数，与修改配置项来打开或关闭垃圾回收机制的效果是一样的。即使在可能根缓冲区还没满时，也能强制执行周期回收。你能调用gc_collect_cycles()函数达到这个目的。这个函数将返回使用这个算法回收的周期数。</p>
+<p>允许打开和关闭垃圾回收机制并且允许自主的初始化的原因，是由于你的应用程序的某部分可能是高时效性的。在这种情况下，你可能不想使用垃圾回收机制。当然，对你的应用程序的某部分关闭垃圾回收机制，是在冒着可能内存泄漏的风险，因为一些可能根也许存不进有限的根缓冲区。因此，就在你调用gc_disable()函数释放内存之前，先调用gc_collect_cycles()函数可能比较明智。因为这将清除已存放在根缓冲区中的所有可能根，然后在垃圾回收机制被关闭时，可留下空缓冲区以有更多空间存储可能根。</p>
 
       
     </div>
@@ -375,7 +403,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
+            <a href="/tags/php/" rel="tag"># php</a>
           
         </div>
       
@@ -388,8 +416,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/06/03/%E5%A4%8D%E5%90%88%E7%B4%A2%E5%BC%95%E5%92%8C%E5%A4%9A%E4%B8%AA%E5%8D%95%E5%88%97%E7%B4%A2%E5%BC%95%E7%9A%84%E5%8C%BA%E5%88%AB/" rel="next" title="复合索引和多个单列索引的区别">
-                <i class="fa fa-chevron-left"></i> 复合索引和多个单列索引的区别
+              <a href="/2020/06/12/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/" rel="next" title="进程和线程">
+                <i class="fa fa-chevron-left"></i> 进程和线程
               </a>
             
           </div>
@@ -397,10 +425,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/06/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%85%AB%E5%A4%A7%E7%B1%BB%E5%9E%8B/" rel="prev" title="数据结构八大类型">
-                数据结构八大类型 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
